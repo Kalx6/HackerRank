@@ -1,0 +1,25 @@
+from collections import defaultdict
+
+v, r = map(int,input().split())
+
+n,m = [],[]
+
+kal = defaultdict(list)
+
+
+for i in range(v):
+    
+    n.append(input())
+    
+for i in range(r):
+    
+    m.append(input())
+    
+for a,b in enumerate(n):
+    kal[b].append(a+1)
+    
+for i in m:
+    if i in n:
+        print(*kal[i])
+    else:
+        print(-1)
